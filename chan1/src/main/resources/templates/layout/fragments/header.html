@@ -5,12 +5,16 @@
 <header th:fragment="header" class="navbar navbar-expand-lg navbar-light bg-light border-bottom" style="margin-left: 65px">
 	
 	<div class="container-fluid" >
-		<a class="navbar-brand" href="/">SBB</a>
-		
+		<a href="#">
+			<i class="fa fa-solid fa-user fa-2x"></i>
+			<span class="nav-text">
+                            마이페이지
+            </span>
+		</a>
 			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 				<li class="nav-item">
-					<!--<a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
-					<a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>-->
+					<a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
+					<a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" th:href="@{/user/signup}">회원가입</a>
