@@ -2,24 +2,41 @@
 	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-<header th:fragment="header" class="navbar navbar-expand-lg navbar-light bg-light border-bottom" style="margin-left: 65px">
-	
-	<div class="container-fluid" >
-		<a href="#">
-			<i class="fa fa-solid fa-user fa-2x"></i>
-			<span class="nav-text">
-                            마이페이지
-            </span>
-		</a>
-			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-				<li class="nav-item">
-					<a class="nav-link" sec:authorize="isAnonymous()" th:href="@{/user/login}">로그인</a>
-					<a class="nav-link" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" th:href="@{/user/signup}">회원가입</a>
-				</li>
-			</ul>
+<header th:fragment="header"  style="margin-left: 65px">
+
+
+	<div class="accordion accordion-flush" id="accordionFlushExample" sec:authorize="isAnonymous()">
+		<div class="accordion-item">
+			<h2 class="accordion-header">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+					회원가입
+				</button>
+			</h2>
+			<div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+				<div class="accordion-body">
+					회원가입 약관 / 동의 체크까지
+					<section th:replace="~{/user/joinForm :: join}"></section>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-item">
+			<h2 class="accordion-header">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+					로그인
+				</button>
+			</h2>
+			<div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+				<div class="accordion-body">
+					<section th:replace="~{/user/loginForm :: login}"></section>
+				</div>
+			</div>
+		</div>
+
 	</div>
+
+	<header style=" height: 100px;" sec:authorize="isAuthenticated()"> <!--로그인 상태일때-->
+		로그인 이후에는 광고 띄우면 될듯
+	</header>
+
 </header>
 </html>
