@@ -9,6 +9,14 @@
 
         <li>
             <a href="#">
+                <i class="fa fa-solid fa-house fa-2x"></i>
+                <span class="nav-text">
+                            메인
+                        </span>
+            </a>
+        </li>
+        <li>
+            <a th:href="@{/admin}">
                 <i class="fa fa-solid fa-user-tie fa-2x"></i>
                 <span class="nav-text">
                             관리자
@@ -24,7 +32,7 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a th:href="@{/test/list}">
                 <i class="fa fa-regular fa-book-open fa-2x"></i>
                 <span class="nav-text">
                             시험
@@ -32,7 +40,7 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a th:href="@{/board/free/list}">
                 <i class="fa fa-regular fa-comments fa-2x"></i>
                 <span class="nav-text">
                             게시판 [ 질문 / 자유 ]
@@ -40,7 +48,7 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a th:href="@{/notice/qna/list}">
                 <i class="fa fa-solid fa-circle-exclamation fa-2x"></i>
                 <span class="nav-text">
                             공지 [ FaQ / QnA ]

@@ -8,10 +8,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/board")
 public class BoardController {
 
-    @GetMapping
-    public String create(){
+    @GetMapping("/free/list")
+    public String freeList(){
 
-        return null;
+        return "board/free/freeList";
+    }
+
+    @GetMapping("/question/list")
+    public String questionList(){
+
+        return "board/question/questionList";
+    }
+
+    @GetMapping("/free/add")
+    public String freeAdd(){
+
+        return "board/free/freeForm";
+    }
+
+    @GetMapping("/question/add")
+    public String questionAdd(){
+
+        return "board/question/questionForm";
     }
 
 }
