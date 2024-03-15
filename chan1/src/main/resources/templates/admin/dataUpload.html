@@ -2,7 +2,51 @@
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{/layout/layout}">
 <div layout:fragment="content" class="container my-3">
-    시험문제 / 정답 등록 form
+
+    <form method="post" th:action="@{/user/login}" enctype="multipart/form-data">
+
+        <!--<div th:replace="~{form_errors :: formErrorsFragment}"></div>-->
+        <div class="mb-3">시험명
+        <select class="form-select" aria-label="Default select example" name="name">
+            <option value="expert_1">1급 전문스포츠지도사</option>
+            <option value="expert_2">2급 전문스포츠지도사</option>
+            <option value="common_1">1급 생활스포츠지도사</option>
+            <option value="common_2">2급 생활스포츠지도사</option>
+            <option value="master">건강운동관리사</option>
+            <option value="youth">유소년스포츠지도사</option>
+            <option value="old">노인스포츠지도사</option>
+            <option value="disabled_1">1급 장애인스포츠지도사</option>
+            <option value="disabled_1">2급 장애인스포츠지도사</option>
+        </select>
+        </div>
+
+        <div class="mb-3">년도
+            <select class="form-select" aria-label="Default select example" name="year">
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="test" class="form-label">문제</label>
+            <input type="file" id="test" name="test" accept=".pdf"/>
+        </div>
+        <div class="mb-3">
+            <label for="answer" class="form-label">답안</label>
+            <input type="file" id="answer" name="answer" accept=".pdf"/>
+        </div>
+
+        <input type="submit" value="저장하기" class="btn btn-primary my-2">
+    </form>
 
 </div>
 </html>
