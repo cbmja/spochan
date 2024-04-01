@@ -19,6 +19,9 @@ public class AdminController {
 
     private final MenuConfig menu;
 
+    public AdminController(MenuConfig menu) {
+        this.menu = menu;
+    }
 
 
     @GetMapping("/list")

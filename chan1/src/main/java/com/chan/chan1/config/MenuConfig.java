@@ -3,11 +3,8 @@ package com.chan.chan1.config;
 
 import lombok.Getter;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Controller;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Component
@@ -41,4 +38,8 @@ public class MenuConfig {
 
     }
 
+    public Map<String, String> getAdminMenu() {
+
+         return this.adminMenu;
+    }
 }
