@@ -3,11 +3,11 @@
         layout:decorate="~{/layout/layout}">
 <div layout:fragment="content" class="container my-3">
 
-    <form method="post" th:action="@{/user/login}" enctype="multipart/form-data">
+    <form method="post" th:action="@{/admin/upload}" enctype="multipart/form-data">
 
         <!--<div th:replace="~{form_errors :: formErrorsFragment}"></div>-->
         <div class="mb-3">시험명
-        <select class="form-select" aria-label="Default select example" name="name">
+        <select class="form-select" aria-label="Default select example" name="type">
             <option value="expert_1">1급 전문스포츠지도사</option>
             <option value="expert_2">2급 전문스포츠지도사</option>
             <option value="common_1">1급 생활스포츠지도사</option>

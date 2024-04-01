@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.awt.*;
@@ -28,6 +29,13 @@ public class AdminController {
 
     @GetMapping("/upload")
     public String uploadData(Model model){
+        config(model);
+        return "admin/dataUpload";
+    }
+
+    @PostMapping("/upload")
+    public String upload(Model model){
+        System.out.println("///////////////////////");
         config(model);
         return "admin/dataUpload";
     }
